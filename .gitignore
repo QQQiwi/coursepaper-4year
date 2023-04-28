@@ -1,2 +1,7 @@
 *.csv
 *mail-data
+*aux
+*fdb
+*fls
+*log
+*tox

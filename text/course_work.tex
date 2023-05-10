@@ -736,14 +736,14 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=1\textwidth]{pic/cloud.png}
+            \includegraphics[width=0.8\textwidth]{pic/cloud.png}
             \caption{Облако слов в комментариях после предобработки}
         \end{figure}
 
         Далее предобработанная выборка сохранялась в отдельный файл формата CSV,
         который использовался в дальнейшем.
 
-        Файл с предобработанной выборкой открывался с помощью скрипта
+        Файл с предобработанной выборкой открывался с помощью программы
         ''algos.py'', в котором загруженный набор данных использовался для двух
         различных экспериментов:
         
@@ -792,6 +792,7 @@
         TF-iDF "--- частота слова и обратная частота документа):
 
         \begin{table}[h]
+            \centering
             \begin{tabular}{|l|l|l|l|l|}
             \hline
                                                           & Accuracy & Precision & Recall & F1-score \\ \hline
@@ -802,6 +803,8 @@
             BoW, SVM            & 0.8597   & 0.8597    & 0.8597 & 0.8597      \\ \hline
             TF-iDF, SVM                & 0.8909   & 0.8909    & 0.8909 & 0.8909   \\ \hline
             \end{tabular}
+            \captionsetup{justification=centering}
+            \caption{Значения метрик}
         \end{table}
 
         Также были вычислены значения матриц ошибок:
@@ -858,10 +861,18 @@
     https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
     (дата обращения 29.04.2023) Загл. с экрана. Яз. англ.
 
-    % model
+    % Bag of words
 
-    %architecture pic
-    % http://shikib.com/captioning.html
+    % tf-idf
+    % https://arxiv.org/abs/2001.09896
+
+    % naive bayes
+    % https://scikit-learn.org/stable/modules/naive_bayes.html
+
+    % Logistic regression
+    % Hosmer, David W.; Lemeshow, Stanley (2000). Applied Logistic Regression
+
+    % 
 
     \bibitem{fwpandas} ''pandas'' [Электронный ресурс] : [сайт] / URL:
     https://pandas.pydata.org/ (дата обращения 17.05.2022) Загл. с экрана. Яз.
@@ -871,16 +882,10 @@
 
 \appendix
 
-    % \section{Код \texttt{getloader.py}}
-    % \inputminted{py}{model-ver-2/getloader.py}
+    \section{Код \texttt{preprocessing.py}}
+    \inputminted{py}{../movie-review-data/preprocessing.py}
 
-    % \section{Код \texttt{model.py}}
-    % \inputminted{py}{model-ver-2/model.py}
-
-    % \section{Код \texttt{train.py}}
-    % \inputminted{py}{model-ver-2/train.py}
-
-    % \section{Код \texttt{checkmetric.py}}
-    % \inputminted{py}{model-ver-2/checkmetric.py}
+    \section{Код \texttt{algos.py}}
+    \inputminted{py}{../movie-review-data/algos.py}
 
 \end{document}
